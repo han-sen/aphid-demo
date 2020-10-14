@@ -1,15 +1,16 @@
-import React from "react";
+import React, { useState } from "react";
+import BugTitle from "./BugTitle";
+import BugBody from "./BugBody";
 
 export default function Bug(props) {
+    const [isOpen, setIsOpen] = useState(false);
+    const toggleIsOpen = () => {
+        setIsOpen(!isOpen);
+    };
     return (
         <div>
-            <p>{props.bug.title}</p>
-            <p>{props.bug.project}</p>
-            <p>{props.bug.severity}</p>
-            <p>{props.bug.blameFile}</p>
-            <p>{props.bug.summary}</p>
-            <p>{props.bug.readOut}</p>
-            <p>{props.bug.status}</p>
+            <BugTitle title={props.bug.title} toggle={toggleIsOpen} />
+            {isOpen ? <BugBody bug={props.bug} /> : null}
             <hr></hr>
         </div>
     );

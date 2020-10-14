@@ -15,7 +15,13 @@ export default function Dashboard() {
             {bugs
                 .filter((bug) => bug.status === filterState)
                 .map((bug) => {
-                    return <Bug bug={bug} changeFilter={changeFilter} />;
+                    return (
+                        <Bug
+                            bug={bug}
+                            changeFilter={changeFilter}
+                            updateBugs={updateBugs}
+                        />
+                    );
                 })}
         </section>
     );

@@ -4,7 +4,7 @@ export default function FilterForm(props) {
     return (
         <div className="filter_form_wrap">
             <form>
-                <label for="filter">Filter by:</label>
+                <label htmlFor="filter">Filter by:</label>
                 <select
                     name="filter"
                     id="filterForm"

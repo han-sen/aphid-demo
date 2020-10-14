@@ -1,0 +1,23 @@
+body {
+    padding: 5rem;
+}
+
+.severity {
+    height: 16px;
+    width: 16px;
+    border-radius: 50%;
+    display: inline-block;
+    margin-right: 0.5rem;
+}
+
+.severity--warning {
+    background: yellow;
+}
+
+.severity--minor {
+    background: orange;
+}
+
+.severity--breaking {
+    background: red;
+}
