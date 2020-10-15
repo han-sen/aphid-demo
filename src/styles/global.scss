@@ -1,4 +1,6 @@
-@import "../../node_modules/bulma/sass/elements/form.sass";
+@import url("https://fonts.googleapis.com/css2?family=Fira+Mono&display=swap");
+
+$font-accent: "Fira Mono", monospace;
 
 body {
     padding: 5rem;
@@ -33,9 +35,17 @@ body {
 .title_row {
     h3 {
         opacity: 0.5;
+        font-family: $font-accent;
     }
 }
 
 .bug_seperator {
     height: 1rem;
+}
+
+/******** BUG FORM ********/
+
+.new_bug_form {
+    display: flex;
+    flex-direction: column;
 }

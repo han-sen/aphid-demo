@@ -19,7 +19,7 @@ export default function NewBug(props) {
     };
     return (
         <div className="new_bug_wrap">
-            <form onSubmit={handleSubmit}>
+            <form onSubmit={handleSubmit} className="new_bug_form">
                 <h1> Add a New Bug </h1>
                 <label htmlFor="title">Title:</label>
                 <input
