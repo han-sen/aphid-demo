@@ -6,7 +6,7 @@ const seedData = [
         blameFile: "unknown",
         summary: "can't render list of dogs",
         readOut: "Unexpected token '<' at start of file",
-        status: "working",
+        status: "open",
     },
     {
         title: "can't save form data",
@@ -24,7 +24,7 @@ const seedData = [
         blameFile: "slider.js",
         summary: "slider starts from 2nd item in image array",
         readOut: "",
-        status: "working",
+        status: "closed",
     },
     {
         title: "can't access auth route",
@@ -42,7 +42,7 @@ const seedData = [
         blameFile: "shipmentController.js",
         summary: "ESLint is complaining about nested promises",
         readOut: "Warning: Avoid Nesting Promises",
-        status: "working",
+        status: "closed",
     },
 ];
 

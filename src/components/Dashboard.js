@@ -1,25 +1,28 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import seedData from "../seed.js";
 import Bug from "./Bug";
 import FilterForm from "./FilterForm";
+import NewBug from "./NewBug";
 
 export default function Dashboard() {
     const [bugs, updateBugs] = useState(seedData);
-    const [filterState, setFilterState] = useState("open");
+    const [statusFilter, setStatusFilter] = useState("open");
     const changeFilter = (e) => {
-        setFilterState(e.target.value);
+        setStatusFilter(e.target.value);
     };
     return (
         <section className="dashboard_wrap">
             <FilterForm changeFilter={changeFilter} />
+            <NewBug bugs={bugs} updateBugs={updateBugs} />
             {bugs
-                .filter((bug) => bug.status === filterState)
-                .map((bug) => {
+                .filter((bug) => bug.status === statusFilter)
+                .map((bug, i) => {
                     return (
                         <Bug
                             bug={bug}
                             changeFilter={changeFilter}
                             updateBugs={updateBugs}
+                            key={bug.title + i}
                         />
                     );
                 })}

@@ -5,7 +5,7 @@ export default function BugSeverity(props) {
         <div>
             <p>
                 <span className={`severity severity--${props.severity}`}></span>
-                {props.severity}
+                Severity: {props.severity}
             </p>
         </div>
     );

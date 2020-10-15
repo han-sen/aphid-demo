@@ -8,10 +8,15 @@ export default function Bug(props) {
         setIsOpen(!isOpen);
     };
     return (
-        <div>
-            <BugTitle title={props.bug.title} toggle={toggleIsOpen} />
+        <article className="bug_wrap">
+            <BugTitle
+                title={props.bug.title}
+                project={props.bug.project}
+                severity={props.bug.severity}
+                toggle={toggleIsOpen}
+            />
             {isOpen ? <BugBody bug={props.bug} /> : null}
-            <hr></hr>
-        </div>
+            <div className="bug_seperator pattern-dots-sm"></div>
+        </article>
     );
 }

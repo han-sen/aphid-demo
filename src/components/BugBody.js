@@ -4,12 +4,12 @@ import BugSeverity from "./BugSeverity";
 
 export default function BugBody(props) {
     return (
-        <div>
+        <div className="bug_body_wrap">
             <BugSeverity severity={props.bug.severity} />
-            <p>{props.bug.project}</p>
-            <p>{props.bug.blameFile}</p>
-            <p>{props.bug.summary}</p>
-            <p>{props.bug.readOut}</p>
+            <p>Project: {props.bug.project}</p>
+            <p>Blame File: {props.bug.blameFile}</p>
+            <p>Summary: {props.bug.summary}</p>
+            <p>Error Readout: {props.bug.readOut}</p>
             <BugStatus status={props.bug.status} />
         </div>
     );
