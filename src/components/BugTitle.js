@@ -2,8 +2,8 @@ import React from "react";
 
 export default function BugTitle(props) {
     return (
-        <div className="bug_row title_row">
-            <h2 onClick={props.toggle}>
+        <div className="bug_row title_row" onClick={props.toggle}>
+            <h2>
                 {/* <span className={`severity severity--${props.severity}`}></span> */}
                 {props.title}
             </h2>

@@ -1,0 +1,27 @@
+@import "./variables";
+
+.bug_row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.title_row {
+    cursor: pointer;
+    h3 {
+        opacity: 0.5;
+        font-family: $font-accent;
+    }
+}
+
+.severity {
+    height: 8px;
+    width: 8px;
+    border-radius: 50%;
+    display: inline-block;
+    margin-right: 0.5rem;
+}
+
+.bug_seperator {
+    height: 1rem;
+}

@@ -13,16 +13,18 @@ export default function Dashboard() {
         const newState = bugs.filter((bug) => bug.id !== id);
         updateBugs(newState);
     };
-
     const changeFilter = (e) => {
         setStatusFilter(e.target.value);
     };
     return (
         <section className="dashboard_wrap">
-            <FilterForm changeFilter={changeFilter} />
-            <button onClick={() => setModalIsActive(true)} className="button">
+            <button
+                onClick={() => setModalIsActive(true)}
+                className="button is-primary"
+            >
                 Add Bug
             </button>
+            <FilterForm changeFilter={changeFilter} />
             <Modal
                 modalIsActive={modalIsActive}
                 setModalIsActive={setModalIsActive}

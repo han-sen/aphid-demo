@@ -1,52 +1,8 @@
 @import url("https://fonts.googleapis.com/css2?family=Fira+Mono&display=swap");
-
-$font-accent: "Fira Mono", monospace;
+@import "./variables";
+@import "./_bug.scss";
 
 body {
     padding: 5rem;
     transition: all 1s ease-in-out;
-}
-
-.severity {
-    height: 16px;
-    width: 16px;
-    border-radius: 50%;
-    display: inline-block;
-    margin-right: 0.5rem;
-}
-
-.severity--warning {
-    background: yellow;
-}
-
-.severity--minor {
-    background: orange;
-}
-
-.severity--breaking {
-    background: red;
-}
-
-.bug_row {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-}
-
-.title_row {
-    h3 {
-        opacity: 0.5;
-        font-family: $font-accent;
-    }
-}
-
-.bug_seperator {
-    height: 1rem;
-}
-
-/******** BUG FORM ********/
-
-.new_bug_form {
-    // display: flex;
-    // flex-direction: column;
 }

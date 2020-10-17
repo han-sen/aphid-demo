@@ -85,7 +85,7 @@ export default function NewBug(props) {
                         onChange={handleChange}
                     />
                 </div>
-                <div className="field">
+                <div className="field is-grouped">
                     <label className="label" htmlFor="severity">
                         Severity:
                     </label>
@@ -119,12 +119,7 @@ export default function NewBug(props) {
                 <div className="field is-grouped">
                     <div className="control">
                         <button type="submit" className="button is-link">
-                            Submit
-                        </button>
-                    </div>
-                    <div className="control">
-                        <button className="button is-link is-light">
-                            Cancel
+                            Add Bug
                         </button>
                     </div>
                 </div>
