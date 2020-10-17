@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 
 export default function Modal(props) {
     return (
@@ -6,7 +6,7 @@ export default function Modal(props) {
             <div className="modal-background"></div>
             <div className="modal-card">
                 <header className="modal-card-head">
-                    <p className="modal-card-title">Add New Bug</p>
+                    <p className="modal-card-title">{props.modalTitle}</p>
                     <button
                         className="delete"
                         aria-label="close"
@@ -14,15 +14,6 @@ export default function Modal(props) {
                     ></button>
                 </header>
                 <section className="modal-card-body">{props.children}</section>
-                {/* <footer className="modal-card-foot">
-                    <button className="button is-success">Save changes</button>
-                    <button
-                        className="button"
-                        onClick={() => setIsActive(false)}
-                    >
-                        Cancel
-                    </button>
-                </footer> */}
             </div>
         </div>
     );

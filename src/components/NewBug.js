@@ -16,6 +16,7 @@ export default function NewBug(props) {
     const handleSubmit = (event) => {
         event.preventDefault();
         props.updateBugs([input, ...props.bugs]);
+        props.setModalIsActive(false);
     };
     return (
         <div className="new_bug_wrap">
