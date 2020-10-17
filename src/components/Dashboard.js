@@ -7,6 +7,12 @@ import NewBug from "./NewBug";
 export default function Dashboard() {
     const [bugs, updateBugs] = useState(seedData);
     const [statusFilter, setStatusFilter] = useState("open");
+
+    const deleteBug = (id) => {
+        const newState = bugs.filter((bug) => bug.id !== id);
+        updateBugs(newState);
+    };
+
     const changeFilter = (e) => {
         setStatusFilter(e.target.value);
     };
@@ -21,6 +27,7 @@ export default function Dashboard() {
                         <Bug
                             bug={bug}
                             changeFilter={changeFilter}
+                            deleteBug={deleteBug}
                             updateBugs={updateBugs}
                             key={bug.title + i}
                         />

@@ -1,5 +1,6 @@
 const seedData = [
     {
+        id: 1,
         title: "broken list",
         project: "dogify",
         severity: "breaking",
@@ -9,6 +10,7 @@ const seedData = [
         status: "open",
     },
     {
+        id: 2,
         title: "can't save form data",
         project: "papaya",
         severity: "breaking",
@@ -18,6 +20,7 @@ const seedData = [
         status: "open",
     },
     {
+        id: 3,
         title: "wrong image order in slider",
         project: "juniper",
         severity: "minor",
@@ -27,6 +30,7 @@ const seedData = [
         status: "closed",
     },
     {
+        id: 4,
         title: "can't access auth route",
         project: "momostly",
         severity: "breaking",
@@ -36,6 +40,7 @@ const seedData = [
         status: "open",
     },
     {
+        id: 5,
         title: "nested promises need cleanup",
         project: "shipit",
         severity: "warning",
