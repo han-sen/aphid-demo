@@ -11,6 +11,9 @@ export default function BugBody(props) {
             <p>Summary: {props.bug.summary}</p>
             <p>Error Readout: {props.bug.readOut}</p>
             <BugStatus status={props.bug.status} />
+            <button onClick={() => props.deleteBug(props.bug.id)}>
+                Delete
+            </button>
         </div>
     );
 }

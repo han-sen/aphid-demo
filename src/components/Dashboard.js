@@ -3,11 +3,12 @@ import seedData from "../seed.js";
 import Bug from "./Bug";
 import FilterForm from "./FilterForm";
 import NewBug from "./NewBug";
+import Modal from "./Modal";
 
 export default function Dashboard() {
     const [bugs, updateBugs] = useState(seedData);
     const [statusFilter, setStatusFilter] = useState("open");
-
+    const [modalIsActive, setModalIsActive] = useState(false);
     const deleteBug = (id) => {
         const newState = bugs.filter((bug) => bug.id !== id);
         updateBugs(newState);
@@ -19,7 +20,15 @@ export default function Dashboard() {
     return (
         <section className="dashboard_wrap">
             <FilterForm changeFilter={changeFilter} />
-            <NewBug bugs={bugs} updateBugs={updateBugs} />
+            <button onClick={() => setModalIsActive(true)} className="button">
+                Add Bug
+            </button>
+            <Modal
+                modalIsActive={modalIsActive}
+                setModalIsActive={setModalIsActive}
+            >
+                <NewBug bugs={bugs} updateBugs={updateBugs} />
+            </Modal>
             {bugs
                 .filter((bug) => bug.status === statusFilter)
                 .map((bug, i) => {

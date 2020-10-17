@@ -4,6 +4,7 @@ $font-accent: "Fira Mono", monospace;
 
 body {
     padding: 5rem;
+    transition: all 1s ease-in-out;
 }
 
 .severity {
@@ -46,6 +47,6 @@ body {
 /******** BUG FORM ********/
 
 .new_bug_form {
-    display: flex;
-    flex-direction: column;
+    // display: flex;
+    // flex-direction: column;
 }

@@ -15,10 +15,9 @@ export default function Bug(props) {
                 severity={props.bug.severity}
                 toggle={toggleIsOpen}
             />
-            {isOpen ? <BugBody bug={props.bug} /> : null}
-            <button onClick={() => props.deleteBug(props.bug.id)}>
-                Delete
-            </button>
+            {isOpen ? (
+                <BugBody bug={props.bug} deleteBug={props.deleteBug} />
+            ) : null}
             <div className="bug_seperator pattern-dots-sm"></div>
         </article>
     );
