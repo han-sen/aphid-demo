@@ -16,9 +16,13 @@ export default function Bug(props) {
                 toggle={toggleIsOpen}
             />
             {isOpen ? (
-                <BugBody bug={props.bug} deleteBug={props.deleteBug} />
+                <BugBody
+                    bug={props.bug}
+                    bugs={props.bugs}
+                    deleteBug={props.deleteBug}
+                    updateBugs={props.updateBugs}
+                />
             ) : null}
-            <div className="bug_seperator pattern-dots-sm"></div>
         </article>
     );
 }

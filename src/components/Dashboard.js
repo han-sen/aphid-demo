@@ -1,9 +1,9 @@
 import React, { useState } from "react";
 import seedData from "../seed.js";
 import Bug from "./Bug";
-import FilterForm from "./FilterForm";
 import NewBug from "./NewBug";
 import Modal from "./Modal";
+import SideBar from "./SideBar";
 
 export default function Dashboard() {
     const [bugs, updateBugs] = useState(seedData);
@@ -35,17 +35,32 @@ export default function Dashboard() {
     };
     return (
         <section className="dashboard_wrap">
-            <button
-                onClick={() => setModalIsActive(true)}
-                className="button is-primary"
-            >
-                Add Bug
-            </button>
-            <FilterForm bugs={bugs} changeFilter={changeFilter} />
+            <SideBar
+                bugs={bugs}
+                changeFilter={changeFilter}
+                setModalIsActive={setModalIsActive}
+            />
+            <div className="bugs_wrap">
+                {bugs
+                    .filter((bug) => checkFilters(bug))
+                    .map((bug, i) => {
+                        return (
+                            <Bug
+                                bug={bug}
+                                bugs={bugs}
+                                changeFilter={changeFilter}
+                                deleteBug={deleteBug}
+                                updateBugs={updateBugs}
+                                key={bug.title + i}
+                            />
+                        );
+                    })}
+            </div>
             <Modal
                 modalIsActive={modalIsActive}
                 setModalIsActive={setModalIsActive}
                 modalTitle="Add Bug"
+                submitText="Add Bug"
             >
                 <NewBug
                     bugs={bugs}
@@ -53,19 +68,6 @@ export default function Dashboard() {
                     setModalIsActive={setModalIsActive}
                 />
             </Modal>
-            {bugs
-                .filter((bug) => checkFilters(bug))
-                .map((bug, i) => {
-                    return (
-                        <Bug
-                            bug={bug}
-                            changeFilter={changeFilter}
-                            deleteBug={deleteBug}
-                            updateBugs={updateBugs}
-                            key={bug.title + i}
-                        />
-                    );
-                })}
         </section>
     );
 }

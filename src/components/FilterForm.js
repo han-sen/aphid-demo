@@ -4,11 +4,10 @@ export default function FilterForm(props) {
     return (
         <div className="filter_form_wrap">
             <label htmlFor="filter">Filter by:</label>
-
-            <div className="select">
+            <div className="select is-rounded is-small">
                 <select
                     name="status"
-                    id="filterForm"
+                    id="statusForm"
                     onChange={props.changeFilter}
                 >
                     <option value="open">Open</option>
@@ -16,16 +15,20 @@ export default function FilterForm(props) {
                     <option value="">All</option>
                 </select>
             </div>
-            <div className="select">
+            <div className="select is-rounded is-small">
                 <select
                     name="project"
-                    id="filterForm"
+                    id="projectForm"
                     onChange={props.changeFilter}
                 >
-                    <option value="">All</option>
-                    {props.bugs.map((bug) => {
+                    <option value="" key={1}>
+                        All
+                    </option>
+                    {props.bugs.map((bug, i) => {
                         return (
-                            <option value={bug.project}>{bug.project}</option>
+                            <option value={bug.project} key={i + 1}>
+                                {bug.project}
+                            </option>
                         );
                     })}
                 </select>

@@ -1,5 +1,18 @@
 @import "./variables";
 
+.bugs_wrap {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+}
+
+.bug_wrap {
+    background: #eee;
+    padding: 1rem;
+    border-radius: 0.5rem;
+    margin-bottom: 0.5rem;
+}
+
 .bug_row {
     display: flex;
     justify-content: space-between;

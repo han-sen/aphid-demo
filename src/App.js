@@ -5,7 +5,9 @@ import "./styles/global.scss";
 function App() {
     return (
         <div className="App">
-            <Dashboard />
+            <main>
+                <Dashboard />
+            </main>
         </div>
     );
 }
