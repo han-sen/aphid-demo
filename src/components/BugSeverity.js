@@ -2,10 +2,12 @@ import React from "react";
 
 export default function BugSeverity(props) {
     return (
-        <div>
+        <div className="bug_body_row">
             <p>
-                <span className={`severity severity--${props.severity}`}></span>
-                Severity: {props.severity}
+                <span className="bug_label">Severity: </span>
+                <span className={`severity_label severity--${props.severity}`}>
+                    {props.severity}
+                </span>
             </p>
         </div>
     );

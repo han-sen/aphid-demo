@@ -2,9 +2,9 @@ import React from "react";
 
 export default function BugStatus(props) {
     return (
-        <div>
+        <div className="bug_body_row">
             <span className={`status--${props.status}`}></span>
-            <p>{props.status}</p>
+            <p>Status: {props.status}</p>
         </div>
     );
 }

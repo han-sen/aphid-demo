@@ -49,6 +49,16 @@ const seedData = [
         readOut: "Warning: Avoid Nesting Promises",
         status: "closed",
     },
+    {
+        id: 6,
+        title: "duplicate entries",
+        project: "papaya",
+        severity: "warning",
+        blameFile: "signUpForm.js",
+        summary: "form data is not coming in as expected",
+        readOut: "reference error: taget is not defined",
+        status: "open",
+    },
 ];
 
 export default seedData;

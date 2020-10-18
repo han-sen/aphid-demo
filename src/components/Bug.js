@@ -8,7 +8,7 @@ export default function Bug(props) {
         setIsOpen(!isOpen);
     };
     return (
-        <article className="bug_wrap">
+        <article className={isOpen ? "bug_wrap is_open" : "bug_wrap"}>
             <BugTitle
                 title={props.bug.title}
                 project={props.bug.project}

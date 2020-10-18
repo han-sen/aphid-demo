@@ -3,16 +3,21 @@ import BugStatus from "./BugStatus";
 import BugSeverity from "./BugSeverity";
 import Modal from "./Modal";
 import EditBug from "./EditBug";
+import BugError from "./BugError";
 
 export default function BugBody(props) {
     const [modalIsActive, setModalIsActive] = useState(false);
     return (
         <div className="bug_body_wrap">
+            <p className="bug_body_row">
+                <span className="bug_label">Blame File:</span>{" "}
+                {props.bug.blameFile}
+            </p>
+            <p className="bug_body_row">
+                <span className="bug_label">Summary: </span> {props.bug.summary}
+            </p>
+            <BugError error={props.bug.readOut} />
             <BugSeverity severity={props.bug.severity} />
-            <p>Project: {props.bug.project}</p>
-            <p>Blame File: {props.bug.blameFile}</p>
-            <p>Summary: {props.bug.summary}</p>
-            <p>Error Readout: {props.bug.readOut}</p>
             <BugStatus status={props.bug.status} />
             <Modal
                 modalIsActive={modalIsActive}
@@ -27,8 +32,16 @@ export default function BugBody(props) {
                     setModalIsActive={setModalIsActive}
                 />
             </Modal>
-            <button onClick={() => setModalIsActive(true)}>Edit</button>
-            <button onClick={() => props.deleteBug(props.bug.id)}>
+            <button
+                className="button is-primary edit_button"
+                onClick={() => setModalIsActive(true)}
+            >
+                Edit
+            </button>
+            <button
+                className="button is-danger"
+                onClick={() => props.deleteBug(props.bug.id)}
+            >
                 Delete
             </button>
         </div>

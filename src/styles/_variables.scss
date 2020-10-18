@@ -1,15 +1,24 @@
 /*** FONTS ***/
 $font-accent: "Fira Mono", monospace;
 
+/*** COLORS ***/
+$red: #f1544b;
+$yellow: #f1d64b;
+$orange: #e17b21;
+$green: #00d1b2c7;
+$green-bright: #00d1b2;
+$ui-dark: #222c41;
+$ui-x-dark: #1a2232;
+
 /*** UTIL CLASSES ***/
 .severity--warning {
-    background: yellow;
+    background: $yellow;
 }
 
 .severity--minor {
-    background: orange;
+    background: $orange;
 }
 
 .severity--breaking {
-    background: red;
+    background: $red;
 }

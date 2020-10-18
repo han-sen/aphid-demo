@@ -3,7 +3,7 @@ import React from "react";
 export default function FilterForm(props) {
     return (
         <div className="filter_form_wrap">
-            <label htmlFor="filter">Filter by:</label>
+            {/* <label htmlFor="filter">Filter by:</label> */}
             <div className="select is-rounded is-small">
                 <select
                     name="status"
