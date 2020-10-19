@@ -33,7 +33,7 @@ const seedData = [
         id: 4,
         title: "can't access auth route",
         project: "momostly",
-        severity: "breaking",
+        severity: "minor",
         blameFile: "app.js",
         summary: "unable to access gated route even with a valid json token",
         readOut: "403 - Unauthorized Access",

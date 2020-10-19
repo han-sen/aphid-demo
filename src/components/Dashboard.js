@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import seedData from "../seed.js";
 import Bug from "./Bug";
 import NewBug from "./NewBug";
@@ -17,7 +17,6 @@ export default function Dashboard() {
         updateBugs(newState);
     };
     const changeFilter = (e) => {
-        console.log(e.target.value);
         setBugFilter({ ...bugFilter, [e.target.name]: e.target.value });
     };
     const checkFilters = (bug) => {

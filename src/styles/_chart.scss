@@ -1,0 +1,17 @@
+@import "./variables";
+
+.chart_wrap {
+    margin: 1rem 0;
+    canvas {
+        margin: 1rem 0 0 -0.5rem;
+        padding: 1rem;
+        border-radius: 0.25rem;
+        background: $ui-x-dark;
+        box-shadow: $shadow-low;
+    }
+}
+
+.bug_total {
+    font-weight: 700;
+    color: $green-bright;
+}

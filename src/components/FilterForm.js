@@ -2,7 +2,7 @@ import React, { useState } from "react";
 
 export default function FilterForm(props) {
     const [activeButton, setActiveButton] = useState("open");
-    const setFilterButton = (event, id) => {
+    const setFilterButton = (event) => {
         setActiveButton(event.target.value);
         props.changeFilter(event);
     };
