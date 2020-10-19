@@ -1,0 +1,46 @@
+@import "./variables";
+
+.sidebar_wrap {
+    width: 30%;
+    color: white;
+}
+
+.filter_form_wrap {
+    label {
+        margin: 1rem 0;
+    }
+    .select select {
+        background-color: $purple;
+        border-color: $purple;
+        border-radius: 0.25rem;
+        color: white;
+    }
+    .select:not(.is-multiple):not(.is-loading)::after {
+        border-color: white;
+    }
+}
+
+.filter_status_wrap {
+    display: flex;
+}
+
+.filter-button {
+    cursor: pointer;
+    background: $ui-med;
+    border: 1px solid $ui-x-dark;
+    padding: 0.5rem;
+    color: white;
+    min-width: 4rem;
+    display: flex;
+    justify-content: center;
+    border-radius: 0.25rem;
+    :active,
+    :focus {
+        outline: 0;
+    }
+}
+
+.filter-button.active-button {
+    background: $purple;
+    transition: background 0.2s ease-in-out;
+}

@@ -2,11 +2,20 @@
 @import "./variables";
 @import "./_bug.scss";
 @import "./_dashboard.scss";
+@import "./sidebar.scss";
 
 body {
     padding: 5rem;
     min-height: 100vh;
     background: $ui-dark;
+}
+
+button:focus {
+    outline: 0;
+}
+
+label {
+    display: block;
 }
 
 .button.is-primary {
@@ -15,6 +24,14 @@ body {
 
 .button.is-danger {
     background-color: $red;
+}
+
+.fas {
+    margin-right: 0.5rem;
+}
+
+.modal {
+    animation: fade-in 0.4s ease-in-out;
 }
 
 /*** ANIMATIONS ***/

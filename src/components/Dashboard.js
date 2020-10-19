@@ -17,6 +17,7 @@ export default function Dashboard() {
         updateBugs(newState);
     };
     const changeFilter = (e) => {
+        console.log(e.target.value);
         setBugFilter({ ...bugFilter, [e.target.name]: e.target.value });
     };
     const checkFilters = (bug) => {

@@ -1,20 +1,53 @@
-import React from "react";
+import React, { useState } from "react";
 
 export default function FilterForm(props) {
+    const [activeButton, setActiveButton] = useState("open");
+    const setFilterButton = (event, id) => {
+        setActiveButton(event.target.value);
+        props.changeFilter(event);
+    };
     return (
         <div className="filter_form_wrap">
-            {/* <label htmlFor="filter">Filter by:</label> */}
-            <div className="select is-rounded is-small">
-                <select
+            <label htmlFor="filter">Bug Status:</label>
+            <div className="filter_status_wrap">
+                <button
+                    onClick={setFilterButton}
                     name="status"
-                    id="statusForm"
-                    onChange={props.changeFilter}
+                    value="open"
+                    className={
+                        activeButton === "open"
+                            ? "filter-button active-button"
+                            : "filter-button"
+                    }
                 >
-                    <option value="open">Open</option>
-                    <option value="closed">Closed</option>
-                    <option value="">All</option>
-                </select>
+                    Open
+                </button>
+                <button
+                    onClick={setFilterButton}
+                    name="status"
+                    value="closed"
+                    className={
+                        activeButton === "closed"
+                            ? "filter-button active-button"
+                            : "filter-button"
+                    }
+                >
+                    Closed
+                </button>
+                <button
+                    onClick={setFilterButton}
+                    name="status"
+                    value=""
+                    className={
+                        activeButton === ""
+                            ? "filter-button active-button"
+                            : "filter-button"
+                    }
+                >
+                    All
+                </button>
             </div>
+            <label htmlFor="filter">Project:</label>
             <div className="select is-rounded is-small">
                 <select
                     name="project"
