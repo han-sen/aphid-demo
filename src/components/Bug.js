@@ -4,12 +4,19 @@ import BugBody from "./BugBody";
 
 export default function Bug(props) {
     const [isOpen, setIsOpen] = useState(false);
+
     const toggleIsOpen = () => {
         setIsOpen(!isOpen);
     };
     return (
-        <article className={isOpen ? "bug_wrap is_open" : "bug_wrap"}>
+        <article
+            className={props.isActive ? "bug_wrap is_open" : "bug_wrap"}
+            onClick={() => {
+                props.changeActiveBug(props.bug.id);
+            }}
+        >
             <BugTitle
+                id={props.bug.id}
                 title={props.bug.title}
                 project={props.bug.project}
                 severity={props.bug.severity}

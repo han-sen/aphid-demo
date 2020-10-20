@@ -4,6 +4,7 @@ import Bug from "./Bug";
 import NewBug from "./NewBug";
 import Modal from "./Modal";
 import SideBar from "./SideBar";
+import ExpandedBug from "./ExpandedBug";
 
 export default function Dashboard() {
     const [bugs, updateBugs] = useState(seedData);
@@ -11,10 +12,15 @@ export default function Dashboard() {
         status: "open",
         project: "",
     });
+    const [activeBug, setActiveBug] = useState(0);
     const [modalIsActive, setModalIsActive] = useState(false);
     const deleteBug = (id) => {
         const newState = bugs.filter((bug) => bug.id !== id);
         updateBugs(newState);
+    };
+    const changeActiveBug = (id) => {
+        const num = id - 1;
+        setActiveBug(num);
     };
     const changeFilter = (e) => {
         setBugFilter({ ...bugFilter, [e.target.name]: e.target.value });
@@ -48,7 +54,10 @@ export default function Dashboard() {
                             <Bug
                                 bug={bug}
                                 bugs={bugs}
-                                changeFilter={changeFilter}
+                                isActive={
+                                    bug.id - 1 === activeBug ? true : false
+                                }
+                                changeActiveBug={changeActiveBug}
                                 deleteBug={deleteBug}
                                 updateBugs={updateBugs}
                                 key={bug.title + i}
@@ -56,6 +65,13 @@ export default function Dashboard() {
                         );
                     })}
             </div>
+            <ExpandedBug
+                bugs={bugs}
+                activeBug={activeBug}
+                changeFilter={changeFilter}
+                deleteBug={deleteBug}
+                updateBugs={updateBugs}
+            />
             <Modal
                 modalIsActive={modalIsActive}
                 setModalIsActive={setModalIsActive}

@@ -1,0 +1,14 @@
+@import "./variables";
+
+.expanded_wrap {
+    width: 40%;
+    padding: 3rem 2rem;
+    color: white;
+    box-shadow: $shadow-low;
+    h2 {
+        font-size: 1.6rem;
+        font-weight: 700;
+        text-shadow: $text-shadow;
+        margin-bottom: 1rem;
+    }
+}
