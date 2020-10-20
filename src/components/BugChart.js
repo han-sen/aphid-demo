@@ -30,7 +30,7 @@ export default function BugChart(props) {
             },
             options: {
                 legend: {
-                    display: true,
+                    display: false,
                     position: "bottom",
                     align: "start",
                     labels: {
@@ -53,9 +53,9 @@ export default function BugChart(props) {
             </h1>
             <canvas
                 id="bug_chart"
-                width="250"
-                height="250"
-                style={{ maxWidth: "250px" }}
+                width="225"
+                height="225"
+                style={{ maxWidth: "225px" }}
             ></canvas>
         </div>
     );
