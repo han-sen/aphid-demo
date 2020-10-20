@@ -1,0 +1,12 @@
+@import "./variables";
+
+.navbar {
+    background: $ui-med;
+    box-shadow: $shadow-low;
+}
+
+.navbar-item,
+.navbar-link {
+    color: white;
+    text-shadow: $text-shadow;
+}
