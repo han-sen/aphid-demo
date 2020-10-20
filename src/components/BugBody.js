@@ -18,7 +18,7 @@ export default function BugBody(props) {
                 {props.bug.blameFile}
             </p>
             <BugError error={props.bug.readOut} />
-            {/* <BugStatus status={props.bug.status} /> */}
+            <BugStatus status={props.bug.status} />
             <button
                 className="button is-primary edit_button"
                 onClick={() => setModalIsActive(true)}
