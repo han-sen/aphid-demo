@@ -23,13 +23,13 @@ export default function BugBody(props) {
                 className="button is-primary edit_button"
                 onClick={() => setModalIsActive(true)}
             >
-                Edit
+                <i className="fas fa-edit"></i>Edit
             </button>
             <button
                 className="button is-danger"
                 onClick={() => props.deleteBug(props.bug.id)}
             >
-                Delete
+                <i className="fas fa-trash-alt"></i>Delete
             </button>
             <Modal
                 modalIsActive={modalIsActive}

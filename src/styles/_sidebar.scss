@@ -3,10 +3,38 @@
 .sidebar_wrap {
     width: 30%;
     color: white;
+    padding-top: 10vh;
+    padding-left: 2rem;
 }
 
 .user_wrap {
     margin-bottom: 1rem;
+    display: flex;
+    align-items: center;
+    color: white;
+    text-shadow: $text-shadow;
+}
+
+.user_avatar {
+    width: 4rem;
+    height: 4rem;
+    justify-content: center;
+    align-items: center;
+    margin-right: 1rem;
+    display: flex;
+    border: 1px solid $grey-lite;
+    border-radius: 0.25rem;
+}
+
+.user_avatar_inner {
+    p {
+        font-size: 1.4rem;
+    }
+}
+
+.user_email {
+    color: $grey-lite;
+    font-size: 0.8rem;
 }
 
 .filter_form_wrap {
@@ -42,6 +70,10 @@
     :focus {
         outline: 0;
     }
+}
+
+.filter-button:hover {
+    background: $ui-highlight;
 }
 
 .filter-button.active-button {

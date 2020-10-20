@@ -7,16 +7,19 @@ $yellow: #f1d64b;
 $orange: #e17b21;
 $green: #00d1b2c7;
 $green-bright: #00d1b2;
+$grey-lite: #eee;
 $purple: #5502fc;
 $ui-med: #27334b;
 $ui-dark: #222c41;
 $ui-x-dark: #1c2639;
+$ui-highlight: #2b3954;
 
 /*** SHADOWS ***/
 $shadow-low: 0 1.1px 2.2px rgba(0, 0, 0, 0.006),
     0 2.5px 5.3px rgba(0, 0, 0, 0.008), 0 4.8px 10px rgba(0, 0, 0, 0.01),
     0 8.5px 17.9px rgba(0, 0, 0, 0.012), 0 15.9px 33.4px rgba(0, 0, 0, 0.014),
     0 38px 80px rgba(0, 0, 0, 0.02);
+$text-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
 
 /*** UTIL CLASSES ***/
 .severity--warning {

@@ -14,9 +14,9 @@ export default function BugChart(props) {
         });
     useEffect(() => {
         const ctx = document.getElementById("bug_chart");
-        const colors = ["#b8eddf", "#7bdfc8", "#00d1b2"];
+        const colors = ["#85aaa4", "#099674", "#00d1b2"];
         new Chart(ctx, {
-            type: "pie",
+            type: "doughnut",
             data: {
                 labels: ["Minor", "Warning", "Breaking"],
                 datasets: [
@@ -36,6 +36,7 @@ export default function BugChart(props) {
                     labels: {
                         fontColor: "white",
                         fontFamily: "Fira Mono",
+                        usePointStyle: true,
                         // fontSize: "0.8rem",
                     },
                 },
@@ -52,9 +53,9 @@ export default function BugChart(props) {
             </h1>
             <canvas
                 id="bug_chart"
-                width="200"
-                height="200"
-                style={{ maxWidth: "200px" }}
+                width="250"
+                height="250"
+                style={{ maxWidth: "250px" }}
             ></canvas>
         </div>
     );
