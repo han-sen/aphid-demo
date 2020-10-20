@@ -4,18 +4,31 @@
     display: flex;
     flex-direction: column;
     flex: 1;
-    max-width: 42%;
+    max-width: 36%;
     background: $ui-x-dark;
     padding: 3rem 2rem;
 }
 
 .bug_wrap {
+    cursor: pointer;
     background: $ui-med;
     padding: 1rem;
     border-radius: 0.5rem;
     margin-bottom: 0.5rem;
     color: white;
     box-shadow: $shadow-low;
+}
+
+.bug_wrap.is_open {
+    background: $purple;
+}
+
+.bug_wrap.is_open:hover {
+    background: $purple;
+}
+
+.bug_wrap:hover {
+    background: $ui-highlight;
 }
 
 .bug_body_wrap {
@@ -41,7 +54,6 @@
 }
 
 .title_row {
-    cursor: pointer;
     h3 {
         opacity: 0.5;
         font-family: $font-accent;
@@ -86,10 +98,10 @@
         animation: slide-off 0.4s cubic-bezier(0.25, 1, 0.5, 1) forwards;
     }
     .title_row h2 {
-        font-size: 1.4rem;
+        // font-size: 1.4rem;
         margin-left: 0;
-        margin-bottom: 0.5rem;
-        color: $green-bright;
+        // margin-bottom: 0.5rem;
+        // color: $green-bright;
         text-shadow: $text-shadow;
         transition: all 0.2s cubic-bezier(0.5, 1, 0.89, 1);
     }
