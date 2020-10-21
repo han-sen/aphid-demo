@@ -19,18 +19,20 @@ export default function BugBody(props) {
             </p>
             <BugError error={props.bug.readOut} />
             <BugStatus status={props.bug.status} />
-            <button
-                className="button is-primary edit_button"
-                onClick={() => setModalIsActive(true)}
-            >
-                <i className="fas fa-edit"></i>Edit
-            </button>
-            <button
-                className="button is-danger"
-                onClick={() => props.deleteBug(props.bug.id)}
-            >
-                <i className="fas fa-trash-alt"></i>Delete
-            </button>
+            <div className="bug_controls_wrap">
+                <button
+                    className="button is-primary edit_button"
+                    onClick={() => setModalIsActive(true)}
+                >
+                    <i className="fas fa-edit"></i>Edit
+                </button>
+                <button
+                    className="button is-danger"
+                    onClick={() => props.deleteBug(props.bug.id)}
+                >
+                    <i className="fas fa-trash-alt"></i>Delete
+                </button>
+            </div>
             <Modal
                 modalIsActive={modalIsActive}
                 setModalIsActive={setModalIsActive}

@@ -12,7 +12,7 @@ export default function Dashboard() {
         status: "open",
         project: "",
     });
-    const [activeBug, setActiveBug] = useState(0);
+    const [activeBug, setActiveBug] = useState(bugs.length - 1);
     const [modalIsActive, setModalIsActive] = useState(false);
     const deleteBug = (id) => {
         const newState = bugs.filter((bug) => bug.id !== id);
@@ -49,6 +49,7 @@ export default function Dashboard() {
             <div className="bugs_wrap">
                 {bugs
                     .filter((bug) => checkFilters(bug))
+                    .sort((a, b) => (a.id > b.id ? -1 : 1))
                     .map((bug, i) => {
                         return (
                             <Bug

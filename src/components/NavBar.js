@@ -5,12 +5,7 @@ export default function NavBar() {
         <nav className="navbar" role="navigation" aria-label="main navigation">
             <div className="navbar-brand">
                 <a className="navbar-item" href="https://bulma.io">
-                    <img
-                        src="https://bulma.io/images/bulma-logo.png"
-                        width="112"
-                        height="28"
-                        alt="logo"
-                    />
+                    <h1>Aphid</h1>
                 </a>
 
                 <a
@@ -34,7 +29,7 @@ export default function NavBar() {
                     </a>
 
                     <a href="/" className="navbar-item">
-                        Documentation
+                        Source Code
                     </a>
                 </div>
 
@@ -44,7 +39,7 @@ export default function NavBar() {
                             <a href="/" className="button is-primary">
                                 <strong>Sign up</strong>
                             </a>
-                            <a href="/" className="button is-light">
+                            <a href="/" className="button is-info">
                                 Log in
                             </a>
                         </div>

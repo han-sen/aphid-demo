@@ -4,7 +4,7 @@ export default function NewBug(props) {
     const [input, setInput] = useState({
         title: "",
         project: "",
-        severity: "warning",
+        severity: "moderate",
         blameFile: "",
         summary: "",
         readOut: "",
@@ -97,7 +97,7 @@ export default function NewBug(props) {
                             onChange={handleChange}
                             value={input.severity}
                         >
-                            <option value="warning">Warning</option>
+                            <option value="moderate">Moderate</option>
                             <option value="minor">Minor</option>
                             <option value="breaking">Breaking</option>
                         </select>

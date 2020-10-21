@@ -96,7 +96,7 @@ export default function EditBug(props) {
                             onChange={handleChange}
                             value={input.severity}
                         >
-                            <option value="warning">Warning</option>
+                            <option value="moderate">Moderate</option>
                             <option value="minor">Minor</option>
                             <option value="breaking">Breaking</option>
                         </select>

@@ -22,14 +22,14 @@ export default function Bug(props) {
                 severity={props.bug.severity}
                 toggle={toggleIsOpen}
             />
-            {isOpen ? (
+            {/* {isOpen ? (
                 <BugBody
                     bug={props.bug}
                     bugs={props.bugs}
                     deleteBug={props.deleteBug}
                     updateBugs={props.updateBugs}
                 />
-            ) : null}
+            ) : null} */}
         </article>
     );
 }

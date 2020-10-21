@@ -14,31 +14,49 @@ export default function BugChart(props) {
         });
     useEffect(() => {
         const ctx = document.getElementById("bug_chart");
-        const colors = ["#85aaa4", "#099674", "#00d1b2"];
+        const colors = ["#e6f9f6", "#66dcca", "#00c4a7"];
         new Chart(ctx, {
-            type: "doughnut",
+            type: "bar",
             data: {
-                labels: ["Minor", "Warning", "Breaking"],
+                labels: ["Minor", "Moderate", "Breaking"],
                 datasets: [
                     {
-                        data: [data.warning, data.minor, data.breaking],
+                        data: [data.minor, data.moderate, data.breaking],
                         backgroundColor: [colors[0], colors[1], colors[2]],
                         borderColor: [colors[0], colors[1], colors[2]],
-                        borderWidth: 1,
+                        minBarLength: 1,
+                        barThickness: 10,
                     },
                 ],
             },
             options: {
+                animation: {
+                    animateScale: true,
+                },
+                cornerRadius: 20,
+                cutoutPercentage: 70,
                 legend: {
                     display: false,
                     position: "bottom",
-                    align: "start",
+                    align: "center",
                     labels: {
                         fontColor: "white",
                         fontFamily: "Fira Mono",
+                        boxWidth: 10,
+                        padding: 20,
                         usePointStyle: true,
+                        drawRoundedRectangle: true,
                         // fontSize: "0.8rem",
                     },
+                },
+                scales: {
+                    yAxes: [
+                        {
+                            ticks: {
+                                beginAtZero: true,
+                            },
+                        },
+                    ],
                 },
             },
         });
@@ -49,7 +67,7 @@ export default function BugChart(props) {
                 <span className="bug_total">
                     {props.bugs.filter((bug) => bug.status === "open").length}
                 </span>{" "}
-                Bugs To Squash:
+                Bugs in Queue:
             </h1>
             <canvas
                 id="bug_chart"
