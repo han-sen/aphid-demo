@@ -68,10 +68,14 @@
     display: flex;
     justify-content: center;
     align-items: center;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
 }
 
 .bug_title {
     margin-left: 0.5rem;
+    text-overflow: ellipsis;
     transition: all 0.2s cubic-bezier(0.5, 1, 0.89, 1);
 }
 

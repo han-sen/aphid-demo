@@ -10,11 +10,16 @@ export default function BugBody(props) {
     return (
         <div className="bug_body_wrap">
             <p className="bug_body_row">
-                <span className="bug_label">Summary: </span> {props.bug.summary}
+                <span className="bug_label">
+                    <i className="fas fa-quote-left"></i>Summary:{" "}
+                </span>{" "}
+                {props.bug.summary}
             </p>
             <BugSeverity severity={props.bug.severity} />
             <p className="bug_body_row">
-                <span className="bug_label">Blame File:</span>{" "}
+                <span className="bug_label">
+                    <i className="fas fa-file-alt"></i>Blame File:
+                </span>{" "}
                 {props.bug.blameFile}
             </p>
             <BugError error={props.bug.readOut} />

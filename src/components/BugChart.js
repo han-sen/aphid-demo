@@ -14,7 +14,7 @@ export default function BugChart(props) {
         });
     useEffect(() => {
         const ctx = document.getElementById("bug_chart");
-        const colors = ["#e6f9f6", "#66dcca", "#00c4a7"];
+        const colors = ["#5502fc", "#1C8CCB", "#00c4a7"];
         new Chart(ctx, {
             type: "bar",
             data: {

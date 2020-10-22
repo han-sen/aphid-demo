@@ -4,7 +4,9 @@ export default function BugError(props) {
     return (
         <div className="bug_body_row error_row">
             <p>
-                <span className="bug_label">Error Readout:</span>
+                <span className="bug_label">
+                    <i className="fas fa-bug"></i>Error Readout:
+                </span>
             </p>
             <p className="bug_error_readout">
                 {props.error ? props.error : "No Error Message Available"}

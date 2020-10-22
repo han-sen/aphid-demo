@@ -31,7 +31,7 @@ const seedData = [
     },
     {
         id: 4,
-        title: "can't access auth route",
+        title: "can't access auth route after login",
         project: "momostly",
         severity: "moderate",
         blameFile: "app.js",
@@ -88,7 +88,7 @@ const seedData = [
         severity: "minor",
         blameFile: "userConfig.js",
         summary:
-            "user's arent getting midnight birthday notifications in correct timezone",
+            "users arent getting midnight birthday notifications in correct timezone",
         readOut: "",
         status: "open",
     },
