@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from "react";
+import { connect } from "react-redux";
 import seedData from "../seed.js";
 import Bug from "./Bug";
 import NewBug from "./NewBug";
@@ -6,7 +7,7 @@ import Modal from "./Modal";
 import SideBar from "./SideBar";
 import ExpandedBug from "./ExpandedBug";
 
-export default function Dashboard() {
+function Dashboard() {
     const [bugs, updateBugs] = useState(seedData);
     const [bugFilter, setBugFilter] = useState({
         status: "open",
@@ -88,3 +89,5 @@ export default function Dashboard() {
         </section>
     );
 }
+
+export default connect()(Dashboard);
