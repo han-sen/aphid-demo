@@ -12,7 +12,15 @@ const selectedBugReducer = (selectedBug = null, action) => {
     return selectedBug;
 };
 
+const filterReducer = (options = { status: "all", project: "" }, action) => {
+    if (action.type === "FILTER_SELECTED") {
+        return action.payload;
+    }
+    return { ...options };
+};
+
 export default combineReducers({
     bugs: bugsReducer,
+    filters: filterReducer,
     selectedBug: selectedBugReducer,
 });

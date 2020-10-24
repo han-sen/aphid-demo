@@ -1,54 +1,31 @@
 import React, { useEffect, useState } from "react";
 import { connect } from "react-redux";
-import seedData from "../seed.js";
+import { selectBug } from "../actions";
 import Bug from "./Bug";
 import NewBug from "./NewBug";
 import Modal from "./Modal";
 import SideBar from "./SideBar";
 import ExpandedBug from "./ExpandedBug";
+import BugFeed from "./BugFeed";
 
-function Dashboard() {
-    const [bugs, updateBugs] = useState(seedData);
-    const [bugFilter, setBugFilter] = useState({
-        status: "open",
-        project: "",
-    });
-    const [activeBug, setActiveBug] = useState(bugs.length - 1);
+function Dashboard(props) {
+    const [bugs, updateBugs] = useState(props.bugs);
+
     const [modalIsActive, setModalIsActive] = useState(false);
     const deleteBug = (id) => {
         const newState = bugs.filter((bug) => bug.id !== id);
         updateBugs(newState);
     };
-    const changeActiveBug = (id) => {
-        const num = id - 1;
-        setActiveBug(num);
-    };
-    const changeFilter = (e) => {
-        setBugFilter({ ...bugFilter, [e.target.name]: e.target.value });
-    };
-    const checkFilters = (bug) => {
-        if (bugFilter.status !== "" && bugFilter.project !== "") {
-            return (
-                bug.status === bugFilter.status &&
-                bug.project === bugFilter.project
-            );
-        } else if (bugFilter.status !== "" && bugFilter.project === "") {
-            return bug.status === bugFilter.status;
-        } else if (bugFilter.project !== "" && bugFilter.status === "") {
-            return bug.project === bugFilter.project;
-        } else {
-            return true;
-        }
-    };
     return (
         <section className="dashboard_wrap">
             <SideBar
                 bugs={bugs}
-                changeFilter={changeFilter}
+                // changeFilter={changeFilter}
                 setModalIsActive={setModalIsActive}
             />
             <div className="bugs_wrap">
-                {bugs
+                <BugFeed />
+                {/* {bugs
                     .filter((bug) => checkFilters(bug))
                     .sort((a, b) => (a.id > b.id ? -1 : 1))
                     .map((bug, i) => {
@@ -65,12 +42,10 @@ function Dashboard() {
                                 key={bug.title + i}
                             />
                         );
-                    })}
+                    })} */}
             </div>
             <ExpandedBug
                 bugs={bugs}
-                activeBug={activeBug}
-                changeFilter={changeFilter}
                 deleteBug={deleteBug}
                 updateBugs={updateBugs}
             />
@@ -90,4 +65,10 @@ function Dashboard() {
     );
 }
 
-export default connect()(Dashboard);
+const mapStateToProps = (state) => {
+    return { bugs: state.bugs, selectedBug: state.selectedBug };
+};
+
+export default connect(mapStateToProps, {
+    selectBug,
+})(Dashboard);
