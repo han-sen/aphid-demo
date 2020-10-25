@@ -5,8 +5,15 @@ import { selectBug } from "../actions";
 
 function BugFeed(props) {
     const checkFilters = (bug) => {
-        if (props.filters.status) {
+        if (props.filters.status && props.filters.project) {
+            return (
+                bug.status === props.filters.status &&
+                bug.project === props.filters.project
+            );
+        } else if (props.filters.status && !props.filters.project) {
             return bug.status === props.filters.status;
+        } else if (props.filters.project && !props.filters.status) {
+            return bug.project === props.filters.project;
         }
         return true;
     };

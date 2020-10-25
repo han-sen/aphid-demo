@@ -12,6 +12,9 @@ function FilterForm(props) {
         setActiveButton(e.target.value);
         changeFilter(e);
     };
+    const setProjectFilter = (e) => {
+        changeFilter(e);
+    };
     const changeFilter = (e) => {
         setBugFilter({ ...bugFilter, [e.target.name]: e.target.value });
         props.selectFilter({ ...bugFilter, [e.target.name]: e.target.value });
@@ -62,7 +65,7 @@ function FilterForm(props) {
                 <select
                     name="project"
                     id="projectForm"
-                    onChange={props.changeFilter}
+                    onChange={setProjectFilter}
                 >
                     <option value="" key={1}>
                         All
