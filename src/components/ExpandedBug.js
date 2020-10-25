@@ -11,7 +11,12 @@ function ExpandedBug(props) {
                     <BugBody bug={props.selectedBug} />
                 </>
             ) : (
-                <p>Select a bug to view details</p>
+                <div className="bug_empty_wrap">
+                    <span className="expanded_bug_icon">
+                        <i className="fas fa-bug"></i>
+                    </span>
+                    <p>Select a bug to view details</p>
+                </div>
             )}
         </div>
     );

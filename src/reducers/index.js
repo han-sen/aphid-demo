@@ -12,7 +12,7 @@ const selectedBugReducer = (selectedBug = null, action) => {
     return selectedBug;
 };
 
-const filterReducer = (options = { status: "all", project: "" }, action) => {
+const filterReducer = (options = { status: "open", project: "" }, action) => {
     if (action.type === "FILTER_SELECTED") {
         return action.payload;
     }

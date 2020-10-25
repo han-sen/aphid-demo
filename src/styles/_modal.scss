@@ -1,0 +1,31 @@
+@import "./variables";
+
+.modal-card-body {
+    background-color: $ui-dark;
+    color: white;
+    .label {
+        color: $grey-lite;
+    }
+}
+
+.input,
+.select select,
+.textarea {
+    background-color: $ui-x-dark;
+    color: white;
+    border: 1px solid $ui-x-dark;
+}
+
+.modal-card-head {
+    border-bottom: 1px solid $ui-med;
+    color: $grey-lite;
+}
+
+.modal-card-title {
+    color: $green-bright;
+}
+
+.modal-card-foot,
+.modal-card-head {
+    background: $ui-x-dark;
+}

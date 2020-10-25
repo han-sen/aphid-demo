@@ -14,7 +14,7 @@ function FilterForm(props) {
     };
     const changeFilter = (e) => {
         setBugFilter({ ...bugFilter, [e.target.name]: e.target.value });
-        props.selectFilter(bugFilter);
+        props.selectFilter({ ...bugFilter, [e.target.name]: e.target.value });
     };
     return (
         <div className="filter_form_wrap">

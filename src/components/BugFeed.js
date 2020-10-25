@@ -10,18 +10,23 @@ function BugFeed(props) {
         }
         return true;
     };
-    return props.bugs
-        .filter((bug) => checkFilters(bug))
-        .map((bug, i) => {
-            return (
-                <Bug
-                    bug={bug}
-                    key={bug.title + i}
-                    selectedBug={props.selectedBug}
-                    selectBug={props.selectBug}
-                />
-            );
-        });
+    return (
+        <div className="bugs_wrap">
+            {props.bugs
+                .filter((bug) => checkFilters(bug))
+                .sort((a, b) => (a.id > b.id ? -1 : 1))
+                .map((bug, i) => {
+                    return (
+                        <Bug
+                            bug={bug}
+                            key={bug.title + i}
+                            selectedBug={props.selectedBug}
+                            selectBug={props.selectBug}
+                        />
+                    );
+                })}
+        </div>
+    );
 }
 
 const mapStateToProps = (state) => {

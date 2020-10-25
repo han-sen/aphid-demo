@@ -1,7 +1,10 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 
 export default function EditBug(props) {
     const [input, setInput] = useState(props.bug);
+    useEffect(() => {
+        setInput(props.bug);
+    }, [props.bug]);
     const handleChange = (event) => {
         setInput({ ...input, [event.target.id]: event.target.value });
     };
@@ -14,7 +17,6 @@ export default function EditBug(props) {
             return bug;
         });
         props.updateBugs([...newBugs]);
-
         props.setModalIsActive(false);
     };
     return (
@@ -118,7 +120,7 @@ export default function EditBug(props) {
                 </div>
                 <div className="field is-grouped">
                     <div className="control">
-                        <button type="submit" className="button is-link">
+                        <button type="submit" className="button is-info">
                             Save Changes
                         </button>
                     </div>
