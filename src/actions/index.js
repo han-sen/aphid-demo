@@ -16,6 +16,22 @@ export const addBug = (bug) => {
     };
 };
 
+export const editBug = (bug) => {
+    console.log(bug);
+    return {
+        type: "EDIT_BUG",
+        payload: bug,
+    };
+};
+
+export const deleteBug = (bug) => {
+    console.log(bug);
+    return {
+        type: "DELETE_BUG",
+        payload: bug,
+    };
+};
+
 export const selectFilter = (filter) => {
     // return an action
     console.log(filter);

@@ -8,7 +8,10 @@ function ExpandedBug(props) {
             {props.selectedBug ? (
                 <>
                     <h2>{props.selectedBug.title}</h2>
-                    <BugBody bug={props.selectedBug} />
+                    <BugBody
+                        bug={props.selectedBug}
+                        deleteBug={props.deleteBug}
+                    />
                 </>
             ) : (
                 <div className="bug_empty_wrap">
@@ -23,7 +26,6 @@ function ExpandedBug(props) {
 }
 
 const mapStateToProps = (state) => {
-    // console.log(state.bugs);
     return { selectedBug: state.selectedBug };
 };
 

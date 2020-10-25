@@ -1,6 +1,8 @@
 import React, { useEffect, useState } from "react";
+import { connect } from "react-redux";
+import { editBug } from "../actions";
 
-export default function EditBug(props) {
+function EditBug(props) {
     const [input, setInput] = useState(props.bug);
     useEffect(() => {
         setInput(props.bug);
@@ -16,7 +18,7 @@ export default function EditBug(props) {
             }
             return bug;
         });
-        props.updateBugs([...newBugs]);
+        props.editBug([...newBugs]);
         props.setModalIsActive(false);
     };
     return (
@@ -129,3 +131,15 @@ export default function EditBug(props) {
         </div>
     );
 }
+
+const mapStateToProps = (state) => {
+    // console.log(state);
+    return {
+        bugs: state.bugs,
+        editBug: state.editBug,
+    };
+};
+
+export default connect(mapStateToProps, {
+    editBug,
+})(EditBug);

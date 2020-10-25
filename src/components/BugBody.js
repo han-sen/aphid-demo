@@ -1,12 +1,20 @@
 import React, { useState } from "react";
+import { connect } from "react-redux";
+import { deleteBug } from "../actions";
+import { selectBug } from "../actions";
 import BugStatus from "./BugStatus";
 import BugSeverity from "./BugSeverity";
 import Modal from "./Modal";
 import EditBug from "./EditBug";
 import BugError from "./BugError";
 
-export default function BugBody(props) {
+function BugBody(props) {
     const [modalIsActive, setModalIsActive] = useState(false);
+    const deleteBug = (id) => {
+        const newList = props.bugs.filter((bug) => bug.id !== id);
+        props.deleteBug(newList);
+        props.selectBug(null);
+    };
     return (
         <div className="bug_body_wrap">
             <p className="bug_body_row">
@@ -33,7 +41,7 @@ export default function BugBody(props) {
                 </button>
                 <button
                     className="button is-danger"
-                    onClick={() => props.deleteBug(props.bug.id)}
+                    onClick={() => deleteBug(props.bug.id)}
                 >
                     <i className="fas fa-trash-alt"></i>Delete
                 </button>
@@ -44,13 +52,16 @@ export default function BugBody(props) {
                 modalTitle="Edit Bug"
                 submitText="Save Changes"
             >
-                <EditBug
-                    bug={props.bug}
-                    bugs={props.bugs}
-                    updateBugs={props.updateBugs}
-                    setModalIsActive={setModalIsActive}
-                />
+                <EditBug bug={props.bug} setModalIsActive={setModalIsActive} />
             </Modal>
         </div>
     );
 }
+const mapStateToProps = (state) => {
+    return { bugs: state.bugs, selectedBug: state.selectedBug };
+};
+
+export default connect(mapStateToProps, {
+    deleteBug,
+    selectBug,
+})(BugBody);

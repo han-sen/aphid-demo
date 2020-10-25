@@ -4,6 +4,10 @@ import seedData from "../seed";
 const bugsReducer = (bugs = seedData, action) => {
     if (action.type === "ADD_BUG") {
         return [action.payload, ...bugs];
+    } else if (action.type === "EDIT_BUG") {
+        return action.payload;
+    } else if (action.type === "DELETE_BUG") {
+        return action.payload;
     }
     return bugs;
 };
