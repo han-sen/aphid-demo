@@ -1,6 +1,8 @@
 import React, { useState } from "react";
+import { connect } from "react-redux";
+import { addBug } from "../actions";
 
-export default function NewBug(props) {
+function NewBug(props) {
     const [input, setInput] = useState({
         title: "",
         project: "",
@@ -15,7 +17,7 @@ export default function NewBug(props) {
     };
     const handleSubmit = (event) => {
         event.preventDefault();
-        props.updateBugs([input, ...props.bugs]);
+        props.addBug(input);
         props.setModalIsActive(false);
     };
     return (
@@ -128,3 +130,14 @@ export default function NewBug(props) {
         </div>
     );
 }
+
+const mapStateToProps = (state) => {
+    // console.log(state);
+    return {
+        addBug: state.addBug,
+    };
+};
+
+export default connect(mapStateToProps, {
+    addBug,
+})(NewBug);

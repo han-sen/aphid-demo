@@ -1,5 +1,4 @@
 import React from "react";
-import { selectBug } from "./actions/index.js";
 import Dashboard from "./components/Dashboard";
 import NavBar from "./components/NavBar";
 import "./styles/global.scss";

@@ -1,10 +1,23 @@
 import React, { useState } from "react";
+import { connect } from "react-redux";
+import { selectFilter } from "../actions";
 
-export default function FilterForm(props) {
+function FilterForm(props) {
     const [activeButton, setActiveButton] = useState("open");
-    const setFilterButton = (event) => {
-        setActiveButton(event.target.value);
-        props.changeFilter(event);
+    const [bugFilter, setBugFilter] = useState({
+        status: "open",
+        project: "",
+    });
+    const setFilterButton = (e) => {
+        setActiveButton(e.target.value);
+        changeFilter(e);
+    };
+    const setProjectFilter = (e) => {
+        changeFilter(e);
+    };
+    const changeFilter = (e) => {
+        setBugFilter({ ...bugFilter, [e.target.name]: e.target.value });
+        props.selectFilter({ ...bugFilter, [e.target.name]: e.target.value });
     };
     return (
         <div className="filter_form_wrap">
@@ -52,7 +65,7 @@ export default function FilterForm(props) {
                 <select
                     name="project"
                     id="projectForm"
-                    onChange={props.changeFilter}
+                    onChange={setProjectFilter}
                 >
                     <option value="" key={1}>
                         All
@@ -69,3 +82,16 @@ export default function FilterForm(props) {
         </div>
     );
 }
+
+const mapStateToProps = (state) => {
+    console.log(state);
+    return {
+        bugs: state.bugs,
+        selectedBug: state.selectedBug,
+        filters: state.filters,
+    };
+};
+
+export default connect(mapStateToProps, {
+    selectFilter,
+})(FilterForm);
