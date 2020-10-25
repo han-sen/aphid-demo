@@ -1,8 +1,11 @@
 import { combineReducers } from "redux";
 import seedData from "../seed";
 
-const bugsReducer = () => {
-    return seedData;
+const bugsReducer = (bugs = seedData, action) => {
+    if (action.type === "ADD_BUG") {
+        return [action.payload, ...bugs];
+    }
+    return bugs;
 };
 
 const selectedBugReducer = (selectedBug = null, action) => {

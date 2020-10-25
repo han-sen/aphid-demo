@@ -8,6 +8,14 @@ export const selectBug = (bug) => {
     };
 };
 
+export const addBug = (bug) => {
+    console.log(bug);
+    return {
+        type: "ADD_BUG",
+        payload: bug,
+    };
+};
+
 export const selectFilter = (filter) => {
     // return an action
     console.log(filter);
