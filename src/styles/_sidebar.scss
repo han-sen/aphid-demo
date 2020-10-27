@@ -1,7 +1,7 @@
 @import "./variables";
 
 .sidebar_wrap {
-    width: 24%;
+    width: 25%;
     color: white;
     padding-top: 3rem;
     padding-left: 3rem;
@@ -13,6 +13,7 @@
     align-items: center;
     color: white;
     text-shadow: $text-shadow;
+    flex-direction: row;
 }
 
 .user_avatar {
@@ -85,4 +86,17 @@
 .filter-button.active-button {
     background: $purple;
     transition: background 0.2s ease-in-out;
+}
+
+@media screen and (max-width: $br-large) {
+    .sidebar_wrap {
+        display: flex;
+        width: 100%;
+        justify-content: center;
+        align-items: baseline;
+    }
+    .filter_form_wrap {
+        display: flex;
+        align-items: center;
+    }
 }

@@ -12,8 +12,10 @@ function Dashboard(props) {
     return (
         <section className="dashboard_wrap">
             <SideBar bugs={props.bugs} setModalIsActive={setModalIsActive} />
-            <BugFeed />
-            <ExpandedBug />
+            <div className="dashboard_inner_wrap">
+                <BugFeed />
+                <ExpandedBug />
+            </div>
             <Modal
                 modalIsActive={modalIsActive}
                 setModalIsActive={setModalIsActive}

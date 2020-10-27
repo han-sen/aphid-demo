@@ -1,4 +1,22 @@
+@import "./variables";
+
 .dashboard_wrap {
     display: flex;
     height: calc(100vh - 4rem);
+}
+
+.dashboard_inner_wrap {
+    width: 75%;
+    display: flex;
+}
+
+@media screen and (max-width: $br-large) {
+    .dashboard_wrap {
+        flex-direction: column;
+        height: auto;
+    }
+    .dashboard_inner_wrap {
+        width: 100%;
+        border-top: 2px solid $ui-x-dark;
+    }
 }
