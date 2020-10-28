@@ -13,10 +13,16 @@
 @media screen and (max-width: $br-large) {
     .dashboard_wrap {
         flex-direction: column;
-        height: auto;
     }
     .dashboard_inner_wrap {
         width: 100%;
         border-top: 2px solid $ui-x-dark;
+        flex: 1;
+    }
+}
+
+@media screen and (max-width: $br-med) {
+    .dashboard_inner_wrap {
+        flex-direction: column;
     }
 }

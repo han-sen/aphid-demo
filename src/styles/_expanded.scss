@@ -26,3 +26,10 @@
 .expanded_bug_icon {
     font-size: 4rem;
 }
+
+@media screen and (max-width: $br-med) {
+    .expanded_wrap {
+        width: 100%;
+        background: $ui-dark;
+    }
+}

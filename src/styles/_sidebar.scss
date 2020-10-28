@@ -94,9 +94,30 @@
         width: 100%;
         justify-content: center;
         align-items: baseline;
+        padding-left: 0;
     }
     .filter_form_wrap {
         display: flex;
         align-items: center;
+    }
+    .user_wrap {
+        margin-right: 1rem;
+    }
+    .filter_form_wrap label {
+        margin: 0 1rem;
+    }
+}
+
+@media screen and (max-width: $br-med) {
+    .sidebar_wrap {
+        flex-direction: column;
+        align-items: center;
+    }
+    .filter_form_wrap {
+        margin: 1rem 0;
+    }
+    .user_avatar {
+        width: 3rem;
+        height: 3rem;
     }
 }
