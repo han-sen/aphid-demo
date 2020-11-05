@@ -96,8 +96,8 @@
     .sidebar_wrap {
         display: flex;
         width: 100%;
-        justify-content: center;
-        align-items: baseline;
+        justify-content: space-evenly;
+        align-items: flex-start;
         padding-left: 0;
     }
     .filter_form_wrap {
@@ -108,7 +108,12 @@
         margin-right: 1rem;
     }
     .filter_form_wrap label {
-        margin: 0 1rem;
+        margin: 0;
+        font-size: 0.8rem;
+    }
+    .admin_wrap {
+        display: flex;
+        align-items: baseline;
     }
 }
 
@@ -132,7 +137,7 @@
     .admin_wrap {
         display: flex;
         justify-content: space-between;
-        align-items: baseline;
+        align-items: center;
     }
     .user_wrap {
         margin-bottom: 0;
