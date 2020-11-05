@@ -10,6 +10,14 @@
     display: flex;
 }
 
+.bugs_dropdown_wrap {
+    display: none;
+}
+
+#bugForm {
+    background: $purple;
+}
+
 @media screen and (max-width: $br-large) {
     .dashboard_wrap {
         flex-direction: column;
@@ -22,7 +30,15 @@
 }
 
 @media screen and (max-width: $br-med) {
+    .bugs_dropdown_wrap {
+        display: flex;
+        justify-content: center;
+        max-width: 90%;
+        margin: 0 auto;
+    }
     .dashboard_inner_wrap {
         flex-direction: column;
+        border: none;
+        margin-top: 1rem;
     }
 }

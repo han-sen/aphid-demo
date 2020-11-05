@@ -1,6 +1,5 @@
 import React, { useEffect, useState } from "react";
 import BugTitle from "./BugTitle";
-import BugBody from "./BugBody";
 
 export default function Bug(props) {
     const [isOpen, setIsOpen] = useState(false);
@@ -33,14 +32,6 @@ export default function Bug(props) {
                 severity={props.bug.severity}
                 toggle={toggleIsOpen}
             />
-            {/* {isOpen ? (
-                <BugBody
-                    bug={props.bug}
-                    bugs={props.bugs}
-                    deleteBug={props.deleteBug}
-                    updateBugs={props.updateBugs}
-                />
-            ) : null} */}
         </article>
     );
 }

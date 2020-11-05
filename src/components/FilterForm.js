@@ -21,63 +21,67 @@ function FilterForm(props) {
     };
     return (
         <div className="filter_form_wrap">
-            <label htmlFor="filter">Bug Status:</label>
-            <div className="filter_status_wrap">
-                <button
-                    onClick={setFilterButton}
-                    name="status"
-                    value="open"
-                    className={
-                        activeButton === "open"
-                            ? "filter-button active-button"
-                            : "filter-button"
-                    }
-                >
-                    Open
-                </button>
-                <button
-                    onClick={setFilterButton}
-                    name="status"
-                    value="closed"
-                    className={
-                        activeButton === "closed"
-                            ? "filter-button active-button"
-                            : "filter-button"
-                    }
-                >
-                    Closed
-                </button>
-                <button
-                    onClick={setFilterButton}
-                    name="status"
-                    value=""
-                    className={
-                        activeButton === ""
-                            ? "filter-button active-button"
-                            : "filter-button"
-                    }
-                >
-                    All
-                </button>
-            </div>
-            <label htmlFor="filter">Project:</label>
-            <div className="select is-rounded is-small">
-                <select
-                    name="project"
-                    id="projectForm"
-                    onChange={setProjectFilter}
-                >
-                    <option value="" key={1}>
+            <div className="filter_status_group">
+                <label htmlFor="filter">Bug Status:</label>
+                <div className="filter_status_wrap">
+                    <button
+                        onClick={setFilterButton}
+                        name="status"
+                        value="open"
+                        className={
+                            activeButton === "open"
+                                ? "filter-button active-button"
+                                : "filter-button"
+                        }
+                    >
+                        Open
+                    </button>
+                    <button
+                        onClick={setFilterButton}
+                        name="status"
+                        value="closed"
+                        className={
+                            activeButton === "closed"
+                                ? "filter-button active-button"
+                                : "filter-button"
+                        }
+                    >
+                        Closed
+                    </button>
+                    <button
+                        onClick={setFilterButton}
+                        name="status"
+                        value=""
+                        className={
+                            activeButton === ""
+                                ? "filter-button active-button"
+                                : "filter-button"
+                        }
+                    >
                         All
-                    </option>
-                    {props.bugs.map((bug, i) => {
-                        return (
-                            <option value={bug.project} key={i + 1}>
-                                {bug.project}
-                            </option>
-                        );
-                    })}
-                </select>
+                    </button>
+                </div>
+            </div>
+            <div className="filter_project_group">
+                <label htmlFor="filter">Project:</label>
+                <div className="select is-rounded is-small">
+                    <select
+                        name="project"
+                        id="projectForm"
+                        onChange={setProjectFilter}
+                    >
+                        <option value="" key={1}>
+                            All
+                        </option>
+                        {props.bugs.map((bug, i) => {
+                            return (
+                                <option value={bug.project} key={i + 1}>
+                                    {bug.project}
+                                </option>
+                            );
+                        })}
+                    </select>
+                </div>
             </div>
         </div>
     );

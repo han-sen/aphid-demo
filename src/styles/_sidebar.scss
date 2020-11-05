@@ -88,6 +88,10 @@
     transition: background 0.2s ease-in-out;
 }
 
+.select:not(.is-multiple):not(.is-loading)::after {
+    border-color: white;
+}
+
 @media screen and (max-width: $br-large) {
     .sidebar_wrap {
         display: flex;
@@ -112,12 +116,28 @@
     .sidebar_wrap {
         flex-direction: column;
         align-items: center;
+        padding-top: 1rem;
     }
     .filter_form_wrap {
-        margin: 1rem 0;
+        margin: 1rem 0 0.5rem 0;
+        label {
+            margin: 0;
+            font-size: 0.8rem;
+        }
     }
     .user_avatar {
         width: 3rem;
         height: 3rem;
+    }
+    .admin_wrap {
+        display: flex;
+        justify-content: space-between;
+        align-items: baseline;
+    }
+    .user_wrap {
+        margin-bottom: 0;
+    }
+    .user_details {
+        display: none;
     }
 }

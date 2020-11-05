@@ -1,5 +1,6 @@
 import React from "react";
 import Bug from "./Bug";
+import BugDropdown from "./BugDropdown";
 import { connect } from "react-redux";
 import { selectBug } from "../actions";
 
@@ -18,21 +19,24 @@ function BugFeed(props) {
         return true;
     };
     return (
-        <div className="bugs_wrap">
-            {props.bugs
-                .filter((bug) => checkFilters(bug))
-                .sort((a, b) => (a.id > b.id ? -1 : 1))
-                .map((bug, i) => {
-                    return (
-                        <Bug
-                            bug={bug}
-                            key={bug.title + i}
-                            selectedBug={props.selectedBug}
-                            selectBug={props.selectBug}
-                        />
-                    );
-                })}
-        </div>
+        <>
+            <div className="bugs_wrap">
+                {props.bugs
+                    .filter((bug) => checkFilters(bug))
+                    .sort((a, b) => (a.id > b.id ? -1 : 1))
+                    .map((bug, i) => {
+                        return (
+                            <Bug
+                                bug={bug}
+                                key={bug.title + i}
+                                selectedBug={props.selectedBug}
+                                selectBug={props.selectBug}
+                            />
+                        );
+                    })}
+            </div>
+            <BugDropdown bugs={props.bugs} />
+        </>
     );
 }
 

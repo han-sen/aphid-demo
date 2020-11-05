@@ -150,7 +150,6 @@
 
 @media screen and (max-width: $br-med) {
     .bugs_wrap {
-        max-height: 20rem;
-        overflow-y: auto;
+        display: none;
     }
 }

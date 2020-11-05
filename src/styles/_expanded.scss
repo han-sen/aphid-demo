@@ -31,5 +31,8 @@
     .expanded_wrap {
         width: 100%;
         background: $ui-dark;
+        margin-top: 1rem;
+        border-top: 1px solid $ui-highlight;
+        box-shadow: none;
     }
 }
