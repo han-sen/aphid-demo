@@ -29,3 +29,13 @@
 .modal-card-head {
     background: $ui-x-dark;
 }
+
+.field.is-grouped {
+    align-items: baseline;
+}
+
+.last-row {
+    .select {
+        margin: 0 2rem 0 1rem;
+    }
+}

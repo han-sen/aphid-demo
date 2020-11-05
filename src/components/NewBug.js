@@ -88,7 +88,7 @@ function NewBug(props) {
                         onChange={handleChange}
                     />
                 </div>
-                <div className="field is-grouped">
+                <div className="field is-grouped last-row">
                     <label className="label" htmlFor="severity">
                         Severity:
                     </label>
