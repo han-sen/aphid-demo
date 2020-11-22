@@ -1,0 +1,22 @@
+{
+  "files": {
+    "main.css": "/aphid-demo/static/css/main.dad1d7c5.chunk.css",
+    "main.js": "/aphid-demo/static/js/main.6816f70e.chunk.js",
+    "main.js.map": "/aphid-demo/static/js/main.6816f70e.chunk.js.map",
+    "runtime-main.js": "/aphid-demo/static/js/runtime-main.ef0597ad.js",
+    "runtime-main.js.map": "/aphid-demo/static/js/runtime-main.ef0597ad.js.map",
+    "static/js/2.cf617037.chunk.js": "/aphid-demo/static/js/2.cf617037.chunk.js",
+    "static/js/2.cf617037.chunk.js.map": "/aphid-demo/static/js/2.cf617037.chunk.js.map",
+    "index.html": "/aphid-demo/index.html",
+    "precache-manifest.af43f5792b344b32091a1093a3444b3b.js": "/aphid-demo/precache-manifest.af43f5792b344b32091a1093a3444b3b.js",
+    "service-worker.js": "/aphid-demo/service-worker.js",
+    "static/css/main.dad1d7c5.chunk.css.map": "/aphid-demo/static/css/main.dad1d7c5.chunk.css.map",
+    "static/js/2.cf617037.chunk.js.LICENSE.txt": "/aphid-demo/static/js/2.cf617037.chunk.js.LICENSE.txt"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.ef0597ad.js",
+    "static/js/2.cf617037.chunk.js",
+    "static/css/main.dad1d7c5.chunk.css",
+    "static/js/main.6816f70e.chunk.js"
+  ]
+}
