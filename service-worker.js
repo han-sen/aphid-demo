@@ -14,7 +14,7 @@
 importScripts("https://storage.googleapis.com/workbox-cdn/releases/4.3.1/workbox-sw.js");
 
 importScripts(
-  "/aphid-demo/precache-manifest.af43f5792b344b32091a1093a3444b3b.js"
+  "/aphid-demo/precache-manifest.cd6fb27c86d53d29172d2c47e8fb17e1.js"
 );
 
 self.addEventListener('message', (event) => {
