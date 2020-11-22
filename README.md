@@ -1,3 +1,1 @@
-# 🚧 UNDER CONSTRUCTION 🚧
-
-Aphid - React bug tracking dashboard
+# Demo site for the Aphid bug tracking dashboard
